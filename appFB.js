@@ -36,7 +36,7 @@ app.get("/*", (req, res) => {
     }
   } else {
     console.log("Replying Thank you.");
-    res.json({ message: "Thank you for the message" });
+    res.json(req.body);
   }
 });
 
