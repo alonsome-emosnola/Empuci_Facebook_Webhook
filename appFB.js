@@ -8,7 +8,7 @@ app.post('/*', function (req, res) {
   console.log("-------------- New Request POST --------------");
   console.log("Headers:"+ JSON.stringify(req.headers, null, 3));
   console.log("Body:"+ JSON.stringify(req.body, null, 3));
-  res.json({ message: "Thank you for the message" });
+  res.json(req.body);
 })
 
 // Add support for GET requests to Facebook webhook
