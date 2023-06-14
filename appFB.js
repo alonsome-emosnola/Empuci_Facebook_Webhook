@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+require("dotenv").config();
 app.use(express.json());
 const port = 3000;
 
@@ -24,7 +25,7 @@ app.get("/*", (req, res) => {
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     // Check the mode and token sent is correct
-    if (mode === "subscribe" && token === "EmmaNeche2313") {
+    if (mode === "subscribe" && token === process.env.WEBHOOK_TOKEN) {
       // Respond with the challenge token from the request
       console.log("WEBHOOK_VERIFIED");
       res.status(200).send(challenge);
