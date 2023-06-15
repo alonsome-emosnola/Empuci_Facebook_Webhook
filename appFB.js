@@ -23,8 +23,8 @@ app.get("/*", (req, res) => {
   var token = req.query["hub.verify_token"];
   var challenge = req.query["hub.challenge"];
 
-  res.send("-------------- New Request GET --------------");
-  res.send("Headers:"+ JSON.stringify(req.headers, null, 3));
+  // res.send("-------------- New Request GET --------------");
+  // res.send("Headers:"+ JSON.stringify(req.headers, null, 3));
   res.send("Body:"+ JSON.stringify(req.body, null, 3));
 
   // Check if a token and mode is in the query string of the request
