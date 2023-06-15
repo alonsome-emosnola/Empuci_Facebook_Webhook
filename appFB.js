@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 require("dotenv").config();
 app.use(express.json());
-const port = 3000;
+const port = 10000;
 
 app.post('/*', function (req, res) {
   console.log("-------------- New Request POST --------------");
