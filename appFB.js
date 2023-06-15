@@ -1,7 +1,11 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const bodyParser = require("body-parser");
 require("dotenv").config();
-app.use(express.json());
+
+const app = express();
+
+// app.use(express.json());
+app.use(bodyParser.json())
 const port = 10000;
 
 app.post('/*', function (req, res) {
@@ -9,6 +13,7 @@ app.post('/*', function (req, res) {
   console.log("Headers:"+ JSON.stringify(req.headers, null, 3));
   console.log("Body:"+ JSON.stringify(req.body, null, 3));
   res.json(req.body);
+  // res.json({ message: "Thank you for the message" });
 })
 
 // Add support for GET requests to Facebook webhook
@@ -37,6 +42,7 @@ app.get("/*", (req, res) => {
   } else {
     console.log("Replying Thank you.");
     res.json(req.body);
+    // res.json({ message: "Thank you for the message" });
   }
 });
 
