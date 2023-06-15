@@ -9,10 +9,10 @@ app.use(express.json());
 const port = 10000;
 
 app.post('/*', function (req, res) {
-  res.send("-------------- New Request POST --------------");
-  res.send("Headers:"+ JSON.stringify(req.headers, null, 3));
-  res,send("Body:"+ JSON.stringify(req.body, null, 3));
-  // res.json(req.body);
+  // console.log("-------------- New Request POST --------------");
+  // console.log("Headers:"+ JSON.stringify(req.headers, null, 3));
+  // console.log("Body:"+ JSON.stringify(req.body, null, 3));
+  res.json(req.body);
   // res.json({ message: "Thank you for the message" });
 })
 
@@ -23,9 +23,10 @@ app.get("/*", (req, res) => {
   var token = req.query["hub.verify_token"];
   var challenge = req.query["hub.challenge"];
 
-  // res.send("-------------- New Request GET --------------");
-  // res.send("Headers:"+ JSON.stringify(req.headers, null, 3));
-  res.send("Body:"+ JSON.stringify(req.body, null, 3));
+  // console.log("-------------- New Request GET --------------");
+  // console.log("Headers:"+ JSON.stringify(req.headers, null, 3));
+  // console.log("Body:"+ JSON.stringify(req.body, null, 3));
+  res.json(req.body)
 
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
