@@ -1,11 +1,11 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const app = express();
 
-// app.use(express.json());
-app.use(bodyParser.json())
+app.use(express.json());
+// app.use(bodyParser.json())
 const port = 10000;
 
 app.post('/*', function (req, res) {
